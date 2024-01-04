@@ -41,7 +41,7 @@ def upload():
     else:
         return "not authorized", 401
 
-@server.route("/download", method=["GET"])
+@server.route("/download", methods=["GET"])
 def download():
     pass
 
