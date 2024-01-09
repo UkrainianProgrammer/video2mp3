@@ -1,6 +1,23 @@
 # video2mp3
 App that converts video to an MP3 file and stores it in a database.
 
+## How to use
+
+This is a microservice application. Therefore, it needs to be deployed in several parts.
+
+Each of the following applications contain a ```Dockerfile``` which needs to be run inside respective directory like so ```docker build .```
+
+Afterwards, applications need to be tagged using ```docker tag <docker image id> <your repository name>:<version tag>```. 
+
+Once images are tagged, push them to your repository ```docker push <image name>:<image tag>.```
+
+Finally for each application, navigate to ```manifests``` folder and apply all YAML files using ```kubectl```: ```kubectl apply -f ./```
+
+### Testing
+
+Login method verified via Postman with BasicAuth credentials.
+
+
 ## System design
 
 Below is a diagram depcicting complete microservice-based architecture which will process video upload requests and will allow to download MP3 files.
