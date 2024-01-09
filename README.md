@@ -7,7 +7,7 @@ This is a microservice application. Therefore, it needs to be deployed in severa
 
 Each of the following applications contain a ```Dockerfile``` which needs to be run inside respective directory like so ```docker build .```
 
-Afterwards, applications need to be tagged using ```docker tag <docker image id> <your repository name>:<version tag>. Once images are tagged, push them to your repository: ```docker push <image name>:<image tag>.```
+Afterwards, applications need to be tagged using ```docker tag <docker image id> <your repository name>:<version tag>```. Once images are tagged, push them to your repository ```docker push <image name>:<image tag>.```
 
 Finally for each application, navigate to ```manifests``` folder and apply all YAML files using ```kubectl```: ```kubectl apply -f ./```
 
