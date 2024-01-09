@@ -17,6 +17,8 @@ Finally for each application, navigate to ```manifests``` folder and apply all Y
 
 Login method verified via Postman with BasicAuth credentials.
 
+![Login to Gateway](design/testing/Login_Gateway.png)
+
 
 ## System design
 
