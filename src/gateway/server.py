@@ -1,11 +1,14 @@
 import os, gridfs, pika, json
 from flask import Flask, request
 from flask_pymongo import PyMongo
+from logging import FileHandler, WARNING
 from auth import validate
 from auth_svc import access
 from storage import util
 
 server = Flask(__name__)
+file_handler = FileHandler('errorlog.txt')
+file_handler.setLevel(WARNING)
 server.config["MONGO_URI"] = "mongodb://host.docker.internal:27017/videos"
 
 mongo = PyMongo(server)
@@ -46,4 +49,4 @@ def download():
     pass
 
 if __name__ == "__main__":
-    server.run( host="0.0.0.0", port=8080 )
+    server.run( host="0.0.0.0", port=8080, debug=True )
