@@ -19,6 +19,15 @@ Login method verified via Postman with BasicAuth credentials.
 
 ![Login to Gateway](design/testing/Login_Gateway.png)
 
+Example test result of uploading a test MP4 video:
+
+```
+curl -X POST -F 'file=@./test_video.mp4' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imluc3RlbjQ5MEBnbWFpbC5jb20iLCJleHAiOjE3MDUwMzAwODAsImlhdCI6MTcwNDk0MzY4MCwiYWRtaW4iOnRydWV9.4n7KMAuFnPVdQYCK4cVr3zcurmtrQ9s2Fx3V57ZnYX8' http://mp3converter.com/upload
+
+success!%
+```
+Converter logs:
+![Converter_upload_log](design/testing/Converter_upload_log.png)
 
 ## System design
 
