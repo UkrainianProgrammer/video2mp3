@@ -3,6 +3,13 @@ App that converts video to an MP3 file and stores it in a database.
 
 ## How to use
 
+Prerequisites! Need to install the following on your host:
+
+* Docker
+* Kubernetes
+* MongoDB
+* MySQL DB
+
 This is a microservice application. Therefore, it needs to be deployed in several parts.
 
 Each of the following applications contain a ```Dockerfile``` which needs to be run inside respective directory like so ```docker build .```
