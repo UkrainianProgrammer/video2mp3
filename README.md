@@ -21,6 +21,17 @@ Once images are tagged, push them to your repository ```docker push <image name>
 
 Finally for each application, navigate to ```manifests``` folder and apply all YAML files using ```kubectl```: ```kubectl apply -f ./```
 
+**To login to a server:**
+curl POST http://mp3converter.com/login -u 'email':'password'
+
+**To upload a video:**
+curl -X POST -F 'file=@./<video_file>' -H 'Authorization: Bearer <token>' http://mp3converter.com/upload
+
+**To download an MP3 file:**
+curl --output <mp3_file>.mp3 -X GET  -H 'Authorization: Bearer <token>' "http://mp3converter.com/download?fid=<fid>"
+
+Testing with Postman API is also an option.
+
 ### Testing
 
 Login method verified via Postman with BasicAuth credentials:
