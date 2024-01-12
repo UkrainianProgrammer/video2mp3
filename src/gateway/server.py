@@ -70,7 +70,7 @@ def download():
             return send_file(out, download_name=f"{fid_string}.mp3")
         except Exception as err:
             print(err)
-            return "internal server error", 500
+            return "Internal server error while trying to download the file", 500
 
     return "not authorized", 401
 
