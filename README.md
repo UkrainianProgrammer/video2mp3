@@ -9,6 +9,7 @@ Prerequisites! Need to install the following on your host:
 * Kubernetes
 * MongoDB
 * MySQL DB
+* Email: turn on Less secure app access in the security section of your email
 
 This is a microservice application. Therefore, it needs to be deployed in several parts.
 
@@ -22,7 +23,7 @@ Finally for each application, navigate to ```manifests``` folder and apply all Y
 
 ### Testing
 
-Login method verified via Postman with BasicAuth credentials.
+Login method verified via Postman with BasicAuth credentials:
 
 ![Login to Gateway](design/testing/Login_Gateway.png)
 
@@ -35,6 +36,21 @@ success!%
 ```
 Converter logs:
 ![Converter_upload_log](design/testing/Converter_upload_log.png)
+
+Example test result of downloading the video:
+```
+curl --output mp3_download.mp3 -X GET  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9sZWtzQGFnZ2llbmV0d29yay5jb20iLCJleHAiOjE3MDUxNzg3ODAsImlhdCI6MTcwNTA5MjM4MCwiYWRtaW4iOnRydWV9.gOeV5MAEE0eWeYDRWZOWohgcA3ut6cHCZmyDlKUG3wM' "http://mp3converter.com/download?fid=65a1a8292acb9733e31e282f"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  422k    0  422k    0     0   604k      0 --:--:-- --:--:-- --:--:--  621k
+(venv) osofishchenko@Oleksandrs-MBP video2mp3 % ls
+README.md               design                  mp3_download.mp3        src                     test.mp3                test_video.mp4
+```
+
+Example of an email received after video was uploaded to our Flask server:
+
+![Email_example](design/testing/email_example.png)
+
 
 ## System design
 
