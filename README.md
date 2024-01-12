@@ -10,6 +10,20 @@ Prerequisites! Need to install the following on your host:
 * MongoDB
 * MySQL DB
 * Email: turn on Less secure app access in the security section of your email
+* Update /etc/hosts to include the following:
+```
+127.0.0.1 mp3converter.com
+127.0.0.1 rabbitmq-manager.com
+```
+This will allow connection to the URLs which will be routed via localhost.
+
+If you are using docker for Mac (like me), install Nginx using the following [guide](https://kubernetes.github.io/ingress-nginx/deploy/#docker-for-mac). This will install a k8s ingress agent to allow connection to the URLs mentioned above.
+
+Note: to login to rabbitMQ GUI, use the following credentials:
+```
+username: guest
+password: guest
+```
 
 This is a microservice application. Therefore, it needs to be deployed in several parts.
 
